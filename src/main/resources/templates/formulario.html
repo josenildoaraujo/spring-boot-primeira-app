@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Evento</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        .card {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            width: 350px;
+        }
+        h1 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 12px;
+            margin-bottom: 4px;
+            font-weight: bold;
+            color: #555;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #256428;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Cadastro de Evento</h1>
+
+        <form action="/evento/cadastrar" method="post">
+
+            <label for="nome">Nome do evento:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="data">Data:</label>
+            <input type="text" id="data" name="data" placeholder="dd/mm/aaaa" required>
+
+            <label for="local">Local:</label>
+            <input type="text" id="local" name="local" required>
+
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" rows="4"></textarea>
+
+            <button type="submit">Enviar</button>
+
+        </form>
+    </div>
+</body>
+</html>
